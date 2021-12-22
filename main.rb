@@ -92,6 +92,12 @@ class LinkedList
     self.tail = new_node if index == size
     at(index-1).next_node = new_node
   end
+
+  def remove_at(index)
+    return self.head = at(index + 1) if index.zero?
+
+    at(index - 1).next_node = at(index + 1)
+  end
 end
 
 class Node
