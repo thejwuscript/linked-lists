@@ -84,6 +84,14 @@ class LinkedList
       temp = temp.next_node
     end
   end
+
+  def insert_at(value, index)
+    new_node = Node.new(value, at(index))
+    return self.head = new_node if index.zero?
+
+    self.tail = new_node if index == size
+    at(index-1).next_node = new_node
+  end
 end
 
 class Node
