@@ -98,6 +98,16 @@ class LinkedList
 
     at(index - 1).next_node = at(index + 1)
   end
+
+  def each
+    return if head.nil?
+
+    node = head
+    until node.nil?
+      yield(node)
+      node = node.next_node
+    end
+  end
 end
 
 class Node
