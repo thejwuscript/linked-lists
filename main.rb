@@ -56,6 +56,13 @@ class LinkedList
     end
     temp
   end
+
+  def pop
+    popped_node = tail
+    self.tail = self.at(size-2)
+    self.at(size-2).next_node = nil
+    popped_node
+  end
 end
 
 class Node
@@ -73,6 +80,6 @@ list.prepend(35)
 list.prepend(12)
 list.prepend(88)
 list.append(99)
-puts "The name of this linked list is #{list.name}."
+puts list.name
 puts list.to_s
 puts "Total number of nodes is #{list.size}."
