@@ -7,7 +7,6 @@ class LinkedList
     @name = name
   end
 
-  # append adds a new node containing value to the end of the list
   def append(value)
     node = Node.new(value)
     if head.nil?
@@ -19,7 +18,6 @@ class LinkedList
     end
   end
 
-  # prepend adds a new node containing value to the start of the list
   def prepend(value)
     node = Node.new(value)
     if head.nil?
@@ -31,7 +29,6 @@ class LinkedList
     end
   end
 
-  # size returns the total number of nodes in the list
   def size
     count = 0
     temp = head
@@ -42,7 +39,6 @@ class LinkedList
     count
   end
 
-  # to_s represents your LinkedList objects as strings
   def to_s
     array = []
     temp = head
@@ -51,6 +47,14 @@ class LinkedList
       temp = temp.next_node
     end
     array.push("nil").join(' -> ')
+  end
+
+  def at(index)
+    temp = head
+    index.times do
+      temp = temp.next_node
+    end
+    temp
   end
 end
 
