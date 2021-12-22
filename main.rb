@@ -63,6 +63,16 @@ class LinkedList
     self.at(size-2).next_node = nil
     popped_node
   end
+
+  def contains?(value)
+    temp = head
+    until temp == nil do
+      return true if temp.value == value
+
+      temp = temp.next_node
+    end
+    false
+  end
 end
 
 class Node
@@ -82,4 +92,4 @@ list.prepend(88)
 list.append(99)
 puts list.name
 puts list.to_s
-puts "Total number of nodes is #{list.size}."
+puts list.contains?(88)
